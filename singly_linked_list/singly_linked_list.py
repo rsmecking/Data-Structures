@@ -143,3 +143,8 @@ class LinkedList:
             # update the current node to the next node in the list
             current = current.get_next()
         return max_value
+
+my_ll = Linkedlist()
+my_ll.add_to_tail(1)
+my_ll.add_to_tail(2)
+my_ll.add_to_tail(3)
