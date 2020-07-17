@@ -85,7 +85,7 @@ class BSTNode:
     def bft_print(self, node):        
         self.queue = Queue()
         self.queue.enqueue(node)
-        while self.queue.__len__() is not 0:
+        while len(self.queue) is not 0:
             node = self.queue.dequeue()
             if node.left:
                 self.queue.enqueue(node.left)
@@ -99,7 +99,7 @@ class BSTNode:
         self.stack = Stack()
         self.stack.push(node)
         # print(self.stack.pop().value)
-        while self.stack.__len__() > 0:
+        while len(self.stack) > 0:
             node = self.stack.pop()
             if node.left:
                 self.stack.push(node.left)
@@ -112,22 +112,18 @@ class BSTNode:
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
-    def pre_order_dft(self):
-        if self is None:
-            return
+    def pre_order_dft(self, node):
         print(self.value)
-        if self.left != None: 
+        if self.left: 
             self.left.pre_order_dft()
-        if self.right != None:
+        if self.right:
             self.right.pre_order_dft()
            
 
     # Print Post-order recursive DFT
-    def post_order_dft(self):
-        if self is None:
-            return
-        if self.left != None: 
+    def post_order_dft(self, node):
+        if self.left: 
             self.left.post_order_dft()
-        if self.right != None:
+        if self.right:
             self.right.post_order_dft()
         print(self.value)
